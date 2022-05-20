@@ -2,7 +2,7 @@
 
 ## GitHub
 
-standard-software/chrome-qii-u-blocker
+standard-software/chrome-qii-u-blocker  
 https://github.com/standard-software/chrome-qii-u-blocker
 
 ## Feature
