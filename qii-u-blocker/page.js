@@ -161,11 +161,8 @@ const qiiUBlockMain = () => {
 
           const button = document.createElement('button');
           button.className = `qiiublocker-button`;
-          button.style.position = `absolute`;
-          button.style.top = `0`;
-          button.style.left = `0`;
           button.style.width = `100%`;
-          button.style.height = `100%`;
+          button.style.height = `32px`;
 
           const buttonText = document.createElement(`div`);
           buttonText.textContent = `Qii-U-Blocker`
@@ -186,27 +183,26 @@ const qiiUBlockMain = () => {
             // * targetNode === button.parentNode
             if (button.parentNode.getAttribute('qiiublock') === `true`) {
               button.parentNode.setAttribute('qiiublock', `false`);
-              button.style.height = `32px`;
               for (let i = 0; i < button.parentNode.childNodes.length; i+=1) {
                 if (button.parentNode.childNodes[i] === button) { continue; }
                 button.parentNode.childNodes[i].style.display = '';
               }
-              button.parentNode.style.paddingTop = `32px`;
+              button.nextSibling.style.top = '48px';
             } else {
               button.parentNode.setAttribute('qiiublock', `true`);
-              button.style.height = `100%`;
               for (let i = 0; i < button.parentNode.childNodes.length; i+=1) {
                 if (button.parentNode.childNodes[i] === button) { continue; }
                 button.parentNode.childNodes[i].style.display = 'none';
               }
-              button.parentNode.style.paddingTop = ``;
+              button.nextSibling.style.top = '0';
             }
           }
-          targetNode.appendChild(button);
+          targetNode.insertBefore(button, targetNode.firstChild);
         } else {
           if (!targetNode.hasAttribute(`qiiublock`)) {continue;}
           targetNode.removeAttribute(`qiiublock`);
-          const button = targetNode.querySelector(`.qiiublocker-button`)
+          const button = targetNode.querySelector(`.qiiublocker-button`);
+          button.nextSibling.style.top = '0';
           if (button) {
             button.remove();
           }
