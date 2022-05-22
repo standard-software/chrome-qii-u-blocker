@@ -241,13 +241,11 @@ const qiiUBlockMain = () => {
           for (let i = 0; i < targetNode.childNodes.length; i+=1) {
             targetNode.childNodes[i].style.display = 'none';
           }
-          targetNode.style.paddingTop = `0`;
-          targetNode.style.paddingBottom = `0`;
 
           const button = document.createElement('button');
           button.className = `qiiublocker-button`;
           button.style.height = `32px`;
-          button.style.marginLeft = `-32px`;
+          button.style.width = `100%`;
 
           const buttonText = document.createElement(`div`);
           buttonText.textContent = `Qii-U-Blocker`
@@ -265,7 +263,7 @@ const qiiUBlockMain = () => {
           buttonText.style.color = `${buttonTextColor}`;
 
           // 変化属性
-          button.style.width = `calc(100% + 64px)`;
+          button.style.marginBottom = ``;
 
           button.onclick = (e) => {
             if (button.parentNode.getAttribute('qiiublock') === `true`) {
@@ -274,24 +272,14 @@ const qiiUBlockMain = () => {
                 if (button.parentNode.childNodes[i] === button) { continue; }
                 button.parentNode.childNodes[i].style.display = '';
               }
-              button.parentNode.style.paddingTop = `32px`
-              button.parentNode.style.paddingBottom = ``;
-              button.parentNode.style.position = `relative`;
-              button.style.position = `absolute`;
-              button.style.top = `0`;
-              button.style.width = `100%`;
+              button.style.marginBottom = `8px`;
             } else {
               button.parentNode.setAttribute('qiiublock', `true`);
               for (let i = 0; i < button.parentNode.childNodes.length; i+=1) {
                 if (button.parentNode.childNodes[i] === button) { continue; }
                 button.parentNode.childNodes[i].style.display = 'none';
               }
-              button.parentNode.style.paddingTop = `0`;
-              button.parentNode.style.paddingBottom = `0`;
-              button.parentNode.style.position = ``;
-              button.style.position = ``;
-              button.style.top = ``;
-              button.style.width = `calc(100% + 64px)`;
+              button.style.marginBottom = ``;
             }
           }
           targetNode.insertBefore(button, targetNode.firstChild);

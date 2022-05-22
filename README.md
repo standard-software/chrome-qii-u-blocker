@@ -9,7 +9,9 @@ https://github.com/standard-software/chrome-qii-u-blocker
 
 ## Version
 
+### 1.1.0
+2022/05/22 Sun
+- Minor design modifications
+
 ### 1.0.0
 2022/05/20 Fri
-
-
