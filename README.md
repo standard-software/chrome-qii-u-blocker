@@ -2,7 +2,7 @@
 
 ## chrome web store
 
-Qii-U-Blocker - Chrome ウェブストア
+Qii-U-Blocker - Chrome ウェブストア  
 https://chrome.google.com/webstore/detail/qii-u-blocker/lbneehhdkkgcgbempdkgabccfibbjjdj?hl=ja&authuser=1
 
 
