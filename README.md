@@ -2,8 +2,8 @@
 
 ## chrome web store
 
-Qii-U-Blocker - Chrome ウェブストア  
-https://chrome.google.com/webstore/detail/qii-u-blocker/lbneehhdkkgcgbempdkgabccfibbjjdj?hl=ja&authuser=1
+Qii-U-Blocker - Chrome Web Store  
+https://chrome.google.com/webstore/detail/qii-u-blocker/lbneehhdkkgcgbempdkgabccfibbjjdj
 
 
 ## GitHub
