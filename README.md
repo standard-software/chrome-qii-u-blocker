@@ -1,4 +1,4 @@
-# Qii_U_blocker
+# Qii-U-blocker
 
 ## GitHub
 
@@ -13,6 +13,7 @@ https://github.com/standard-software/chrome-qii-u-blocker
 2022/05/22 Sun
 - Minor design modifications
 - fix get userpage username includes _
+- add icons
 
 ### 1.0.0
 2022/05/20 Fri

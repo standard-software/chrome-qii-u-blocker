@@ -3,7 +3,11 @@
   "name": "Qii-U-Blocker",
   "version": "1.0.0",
   "description": "Qiita ページの指定ユーザーを非表示にします",
-
+  "icons": {
+    "16": "icon/icon16x16.png",
+    "48": "icon/icon48x48.png",
+    "128": "icon/icon128x128.png"
+  },
   "content_scripts": [
     {
       "matches": ["https://qiita.com/*"],
