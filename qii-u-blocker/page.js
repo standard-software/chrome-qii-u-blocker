@@ -128,8 +128,8 @@ const qiiUBlockMain = () => {
     pageType,
   );
 
-  chrome.storage.local.get('qiiubloler_users', (data) => {
-    let blockUsers = data.qiiubloler_users;
+  chrome.storage.local.get('qiiublocker_setting', (data) => {
+    let blockUsers = data?.qiiublocker_setting?.users;
     if(typeof blockUsers == `undefined`) {
       blockUsers = [];
     }
@@ -347,15 +347,17 @@ const qiiUBlockMain = () => {
         if (userBlocked === false) {
           buttonText.textContent = `Qii-U-Blockerでブロックする`
           button.onclick = () => {
-            chrome.storage.local.get('qiiubloler_users', (data) => {
-              let blockUsers = data.qiiubloler_users;
+            chrome.storage.local.get('qiiublocker_setting', (data) => {
+              let blockUsers = data?.qiiublocker_setting?.users;
               if(typeof blockUsers == `undefined`) {
                 blockUsers = [];
               }
 
               blockUsers.push(pageUserName);
 
-              chrome.storage.local.set({'qiiubloler_users': blockUsers}, () => {
+              const qiiublocker_setting = {...data?.qiiublocker_setting};
+              qiiublocker_setting.users = blockUsers;
+              chrome.storage.local.set({'qiiublocker_setting': qiiublocker_setting}, () => {
                 button.remove();
               });
             });
@@ -363,8 +365,8 @@ const qiiUBlockMain = () => {
         } else {
           buttonText.textContent = `Qii-U-Blockerのブロックを解除`
           button.onclick = () => {
-            chrome.storage.local.get('qiiubloler_users', (data) => {
-              let blockUsers = data.qiiubloler_users;
+            chrome.storage.local.get('qiiublocker_setting', (data) => {
+              let blockUsers = data?.qiiublocker_setting?.users;
               if(typeof blockUsers == `undefined`) {
                 blockUsers = [];
               } else {
@@ -373,7 +375,9 @@ const qiiUBlockMain = () => {
                   _deleteIndex(blockUsers, index);
                 }
               }
-              chrome.storage.local.set({'qiiubloler_users': blockUsers}, () => {
+              const qiiublocker_setting = {...data?.qiiublocker_setting};
+              qiiublocker_setting.users = blockUsers;
+              chrome.storage.local.set({'qiiublocker_setting': qiiublocker_setting}, () => {
                 button.remove();
               });
             });
