@@ -123,7 +123,7 @@ const qiiUBlockMain = () => {
   const pageType = getQiitaHomePageType();
 
   console.log(
-    `chrome-qii-u-blocker`,
+    `Qii-U-Blocker`,
     // location.href,
     pageType,
   );
@@ -151,7 +151,7 @@ const qiiUBlockMain = () => {
         if (hitFlag) {
           if (targetNode.hasAttribute(`qiiublock`)) {continue;}
           console.log(
-            `chrome-qii-u-blocker Hit linkName:${linkName}`,
+            `Qii-U-Blocker Hit linkName:${linkName}`,
           );
 
           targetNode.setAttribute('qiiublock', `true`);
@@ -228,7 +228,7 @@ const qiiUBlockMain = () => {
         }
         if (hitFlag) {
           console.log(
-            `chrome-qii-u-blocker Hit linkName:${linkName}`,
+            `Qii-U-Blocker Hit linkName:${linkName}`,
           );
 
           if (targetNode.hasAttribute(`qiiublock`)) {continue;}
@@ -310,7 +310,7 @@ const qiiUBlockMain = () => {
       }
 
       // console.log(
-      //   `chrome-qii-u-blocker ユーザーページ:${pageUserName} userBlocked:${userBlocked}`,
+      //   `Qii-U-Blocker ユーザーページ:${pageUserName} userBlocked:${userBlocked}`,
       // );
 
       const buttonList = document.querySelectorAll("button");
