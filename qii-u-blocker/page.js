@@ -298,6 +298,9 @@ const qiiUBlockMain = () => {
       if (pageUserName.includes('/')) {
         pageUserName = _subFirstDelimFirst(pageUserName, '/');
       }
+      if (pageUserName.includes('?')) {
+        pageUserName = _subFirstDelimFirst(pageUserName, '?');
+      }
 
       let userBlocked = false;
       for (const userName of blockUsers) {
@@ -306,9 +309,9 @@ const qiiUBlockMain = () => {
         }
       }
 
-      console.log(
-        `chrome-qii-u-blocker ユーザーページ:${pageUserName} userBlocked:${userBlocked}`,
-      );
+      // console.log(
+      //   `chrome-qii-u-blocker ユーザーページ:${pageUserName} userBlocked:${userBlocked}`,
+      // );
 
       const buttonList = document.querySelectorAll("button");
       for (const element of Array.from(buttonList)) {
@@ -316,7 +319,7 @@ const qiiUBlockMain = () => {
         if (element.id === `qiiublocker-button`) { return; }
       }
 
-      const ankerList = document.querySelectorAll(`a[href^="/${pageUserName}/feed"]`);
+      const ankerList = document.querySelectorAll(`a[href^="/${pageUserName.replaceAll('_', '\\_')}/feed"]`);
       for (const element of Array.from(ankerList)) {
         if (!element) { continue; }
 

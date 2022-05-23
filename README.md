@@ -12,6 +12,7 @@ https://github.com/standard-software/chrome-qii-u-blocker
 ### 1.1.0
 2022/05/22 Sun
 - Minor design modifications
+- fix get userpage username includes _
 
 ### 1.0.0
 2022/05/20 Fri
